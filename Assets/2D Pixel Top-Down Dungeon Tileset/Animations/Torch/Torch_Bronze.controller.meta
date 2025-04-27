@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 04bd2f7f34c5daa45b696149b5d3b52f
+timeCreated: 1476278343
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 73645
+  packageName: 2D Pixel Top-Down Dungeon Tileset
+  packageVersion: 1.2
+  assetPath: Assets/2D Pixel Top-Down Dungeon Tileset/Animations/Torch/Torch_Bronze.controller
+  uploadId: 211936

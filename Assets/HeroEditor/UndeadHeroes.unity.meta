@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5413fbae07cc40238f383cd7ca6ec540
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 100192
+  packageName: 'Undead Heroes: Character Editor'
+  packageVersion: 7.7
+  assetPath: Assets/HeroEditor/UndeadHeroes.unity
+  uploadId: 646437

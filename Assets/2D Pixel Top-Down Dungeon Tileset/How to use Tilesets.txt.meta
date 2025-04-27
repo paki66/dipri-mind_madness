@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f6f81ae69c06c4d479dc2d1914c169e4
+timeCreated: 1510471010
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 73645
+  packageName: 2D Pixel Top-Down Dungeon Tileset
+  packageVersion: 1.2
+  assetPath: Assets/2D Pixel Top-Down Dungeon Tileset/How to use Tilesets.txt
+  uploadId: 211936

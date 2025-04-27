@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6763cf44203a0d34f8efb8bbbf4ea5a5
+timeCreated: 1476277829
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 73645
+  packageName: 2D Pixel Top-Down Dungeon Tileset
+  packageVersion: 1.2
+  assetPath: Assets/2D Pixel Top-Down Dungeon Tileset/Animations/Brazier/Brazier_Golden.controller
+  uploadId: 211936

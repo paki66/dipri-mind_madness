@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 69615aa2fe569a44bab0989880143f01
+timeCreated: 1476277990
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 73645
+  packageName: 2D Pixel Top-Down Dungeon Tileset
+  packageVersion: 1.2
+  assetPath: Assets/2D Pixel Top-Down Dungeon Tileset/Animations/Spike Trap/Pull_Back.anim
+  uploadId: 211936

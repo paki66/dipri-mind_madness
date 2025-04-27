@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 514b9c6866004493af51dfa54cb77918
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 100192
+  packageName: 'Undead Heroes: Character Editor'
+  packageVersion: 7.7
+  assetPath: Assets/HeroEditor/UndeadHeroes/Prefabs/Projectiles/Arrow.prefab
+  uploadId: 646437
