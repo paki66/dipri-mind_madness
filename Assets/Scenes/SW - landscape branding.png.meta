@@ -197,7 +197,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SW - landscape branding_0: -6746863194656619249
+      SW - landscape branding_1: -5519181400452778322
+      SW - landscape branding_2: 8182049573862405228
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

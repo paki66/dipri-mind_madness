@@ -14,11 +14,12 @@ public class PlayerMovement : MonoBehaviour
     public int attack = 1;
     [SerializeField] FloatingHealthBar healthBar;
     Vector2 moveDirection;
-    [SerializeField] float health, maxHealth = 3f;
+    [SerializeField] float health, maxHealth = 30f;
     bool isDead = false;
     bool animationDiePlayed = false;
+    GameObject player;
 
-    public float cooldownTime = 2f;
+    public float cooldownTime = 1f;
     private float nextFireTime = 0f;
     public static int noOfPressAttack = 0;
     float lastPressedTime = 0;
@@ -27,7 +28,9 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         healthBar = GetComponentInChildren<FloatingHealthBar>();
+        player = GameObject.Find("Player");
         body = GetComponent<Rigidbody2D>();
+
     }
 
 
@@ -61,23 +64,27 @@ public class PlayerMovement : MonoBehaviour
 
         if (isMovingLeft)
         {
-            body.transform.localScale = new Vector3(0.4f, 0.4f, 1);
+            player.transform.localScale = new Vector3(1f, 1f, 1);
         }
         else
         {
-            body.transform.localScale = new Vector3(-0.4f, 0.4f, 1);
+            player.transform.localScale = new Vector3(-1f, 1f, 1);
         }
 
-        moveDirection = new Vector2(xInput, yInput).normalized;
-        body.linearVelocity = moveDirection * speed;
-        animator.SetFloat("moveSpeed", moveDirection.magnitude);
+        if (!animator.GetBool("Attack1") && !animator.GetBool("Attack2"))
+        {
+            moveDirection = new Vector2(xInput, yInput).normalized;
+            body.linearVelocity = moveDirection * speed;
+            animator.SetFloat("moveSpeed", moveDirection.magnitude);
+        }
 
-
+     
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
             animator.SetBool("Attack1", false);
         }
-        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("Attack2"))
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f && 
+            (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle") || animator.GetCurrentAnimatorStateInfo(0).IsName("Attack2")))
         {
             animator.SetBool("Attack2", false);
             noOfPressAttack = 0;
@@ -88,13 +95,9 @@ public class PlayerMovement : MonoBehaviour
             noOfPressAttack = 0;
         }
 
-
-        if (Time.time > nextFireTime)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Attack();
-            }
+            Attack();
         }
 
         if (xInput > 0)
@@ -112,6 +115,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //so it looks at how many clicks have been made and if one animation has finished playing starts another one.
         lastPressedTime = Time.time;
+        body.linearVelocity = new Vector2(0, 0);
         noOfPressAttack++;
         if (noOfPressAttack == 1)
         {
@@ -121,14 +125,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (noOfPressAttack >= 2)
         {
-            animator.SetBool("Attack1", false);
             animator.SetBool("Attack2", true);
         }
     }
 
     private void FixedUpdate()
     {
-        if (!isDead)
+        if (!isDead && animator.GetCurrentAnimatorStateInfo(0).IsName("Run"))
         {
             body.linearVelocity = new Vector2(moveDirection.x * speed, moveDirection.y * speed);
         }

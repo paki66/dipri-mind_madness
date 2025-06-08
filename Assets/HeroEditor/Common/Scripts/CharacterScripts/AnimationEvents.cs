@@ -57,5 +57,12 @@ namespace Assets.HeroEditor.Common.Scripts.CharacterScripts
 	    {
 			transform.parent.GetComponent<Character>().UpdateAnimation();
 	    }
-	}
+
+        public void DealDamage()
+        {
+			int attackPoints = GetComponentInParent<Enemy>().attackPoints;
+			GameObject.FindObjectOfType<PlayerMovement>().TakeDamage(attackPoints);
+			Debug.Log(attackPoints);
+        }
+    }
 }
